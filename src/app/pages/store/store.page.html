@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>store</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">store</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  @if (cargando) {
+    <div class="spinner-overlay">
+      <ion-spinner name="dots" class="cargando"></ion-spinner>
+    </div>
+  }
+  @else {
+
+    @for (item of items; track $index) {
+      <div>
+        <div>
+          <h3>{{item.name}}</h3>
+        </div>
+        <div>
+          <p>{{item.description}}</p>
+        </div>
+        <div>
+          @if (item.image) {
+            <img [src]="item.image" [alt]="item.name">
+          }
+          @else{
+            <img src="https://via.placeholder.com/50x50" alt="defecto">
+          }
+        </div>
+        <div>
+          <p>${{item.price}}</p>
+        </div>
+      </div>
+    }
+    @empty {
+      <h1>No hay items en el carrito</h1>
+    }
+
+  }
+</ion-content>

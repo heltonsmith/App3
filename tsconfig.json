@@ -2,10 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -16,17 +13,31 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2022",
-    "module": "es2020",
     "lib": ["es2018", "dom"],
     "useDefineForClassFields": false,
     "strictPropertyInitialization": false,
-    "strictNullChecks": false
+    "strictNullChecks": false,
+    "target": "ES6",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./", // Esto debería apuntar a la raíz del proyecto
+    "paths": {
+      "src/*": ["src/*"]
+    },
   },
-  "angularCompilerOptions": {
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "dist"],
+    "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json",  // Ruta correcta al archivo tsconfig.json
+    "sourceType": "module"
   }
 }

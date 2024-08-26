@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Models } from 'src/app/models/models';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent  implements OnInit {
 
-  article: ArticuloI;
+  article: Models.Home.ArticuloI;
 
   constructor() {
     this.cargarArticulo();
@@ -16,7 +17,7 @@ export class HomeComponent  implements OnInit {
   ngOnInit() {}
 
   cargarArticulo(){
-    const data: ArticuloI = {
+    const data: Models.Home.ArticuloI = {
       title: 'Articulo de prueba',
       description: 'Este es un articulo de prueba, con una descripcion larga y un enlace a una imagen.',
       image: {
@@ -26,15 +27,7 @@ export class HomeComponent  implements OnInit {
     };
     this.article = data;
   }
-
 }
 
-interface ArticuloI{
-  title: string;
-  description: string;
-  image: {
-    url: string;
-    alt: string;
-  }
-  id?: string;
-}
+
+

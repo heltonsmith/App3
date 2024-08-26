@@ -12,7 +12,14 @@ export const routes: Routes = [
     pathMatch: 'full'
   },
 
+  {
+    path: 'store',
+    loadComponent: () => import('./pages/store/store.page').then( m => m.StorePage)
+  },
+
   { path: 'not-found', loadComponent: () => import('./shared/not-found/not-found.component').then((m) => m.NotFoundComponent) },
 
-  { path: '**', redirectTo: 'not-found', pathMatch: 'full' }
+  { path: '**', redirectTo: 'not-found', pathMatch: 'full' },
+
+
 ];
