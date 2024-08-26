@@ -1,0 +1,18 @@
+.cabecera{
+  height: 2em;
+  padding: 2em;
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;  /* Centra verticalmente */
+  background-color: lightgray;
+}
+.cabecera h1{
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 80%;
+}
+.logo{
+  width: 20%;
+  float: right;
+}

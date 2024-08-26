@@ -1,0 +1,18 @@
+.pie{
+  height: 2em;
+  padding: 2em;
+  text-align: center;
+  border-top: 1px solid black;
+  display: flex;
+  align-items: center;  /* Centra verticalmente */
+  justify-content: center; /* Opcional: Centra horizontalmente */
+  background-color: lightgray;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.pie h1{
+  margin: 0;
+  padding: 0;
+}
