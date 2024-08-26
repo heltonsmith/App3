@@ -18,6 +18,10 @@
   <br><br>
 
   <a [routerLink]="['/contacto']">Contacto con SPA</a>
+  <br><br>
+
+  <input type="text" (keydown)="presionar()" (keyup)="soltar()" />
+
   <app-footer></app-footer>
 </ion-content>
 

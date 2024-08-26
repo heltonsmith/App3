@@ -27,6 +27,15 @@ export class HomeComponent  implements OnInit {
     };
     this.article = data;
   }
+
+  presionar() {
+    console.log('Presionar');
+  }
+
+  soltar(){
+    console.log('Soltar');
+  }
+
 }
 
 
