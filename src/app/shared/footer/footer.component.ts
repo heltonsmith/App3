@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { CarritoService } from 'src/app/servicios/carrito.service';
 
 @Component({
   selector: 'app-footer',
@@ -6,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent  implements OnInit {
+  cant: number = 0;
+  carrito = inject(CarritoService);
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.carrito.getCarritoChanges().subscribe(changes => {
+      this.cant = changes;
+    });
+  }
 
 }

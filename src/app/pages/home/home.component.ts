@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Models } from 'src/app/models/models';
+import { CarritoService } from 'src/app/servicios/carrito.service';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +10,8 @@ import { Models } from 'src/app/models/models';
 export class HomeComponent  implements OnInit {
 
   article: Models.Home.ArticuloI;
+
+  carrito = inject(CarritoService)
 
   constructor() {
     this.cargarArticulo();
