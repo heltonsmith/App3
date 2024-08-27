@@ -12,7 +12,11 @@ export class FooterComponent  implements OnInit {
   cant: number = 0;
   carrito = inject(CarritoService);
 
-  constructor(private authService: AuthService, private router: Router) { }
+  private authService = inject(AuthService);
+  private router = inject(Router);
+  constructor() { }
+  //constructor(private authService: AuthService, private router: Router) { }
+
 
   ngOnInit() {
     this.carrito.getCarritoChanges().subscribe(changes => {
