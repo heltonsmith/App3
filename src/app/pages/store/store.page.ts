@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonSpinner } from '@ionic/angular/standalone';
 import { Models } from 'src/app/models/models';
+import { FooterComponent } from 'src/app/shared/footer/footer.component';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-store',
